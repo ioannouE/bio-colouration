@@ -1,0 +1,16 @@
+lightly
+matplotlib
+numpy
+pandas
+pillow
+pytorch_lightning
+scikit-learn
+torch
+torchvision
+lightning
+tensorflow
+tensorboard
+
+pyyaml
+opencv-python
+kornia

@@ -1,0 +1,57 @@
+data:
+  data_dir: "/fastdata/bi1ei/Passerines-Segmented-Back-RGB-PNG" # SimCLR_test_images"
+  # data_dir: "/mnt/xdrive/cooney_lab/Shared/RSE/Image_sets/Passerines-Segmented-Back-RGB-PNG"
+
+output:
+  out_dir: "embeddings/01_embeddings"
+  # out_dir: "/mnt/xdrive/cooney_lab/Shared/RSE/01_embeddings"
+
+model:
+  name: 'simclr'  # not yet configurable
+  backbone: 'resnet50'
+  weights: 'IMAGENET1K_V2' # https://pytorch.org/vision/stable/models.html
+
+  optimizer:
+    lr: 0.001
+
+  scheduler:
+    name: 'CosineAnnealingLR'  # not yet configurable
+    params:
+      T_max: 200
+      eta_min: 0.001
+
+  criterion:
+    name: 'NTXentLoss'  # not yet configurable
+    params:
+      temperature: 0.1
+
+seed: 1
+
+dataloader:
+  num_workers: 16
+  batch_size: 40
+
+train:
+  deterministic: true  # for reproducible runs
+  accelerator: 'gpu'
+  devices: 'auto' # or 1 or 2
+  max_epochs: 200
+  log_every_n_steps: 25 # ideally one log for each epoch (= number of steps per epoch)
+
+augmentations:
+  transforms:
+    input_size: 224 # should match input size for chosen model backbone
+    cj_prob: 0.0 # default = 0.8; Probability that color jitter is applied.
+    cj_strength: 0.0 # default = 1.0; Strength of the color jitter. cj_bright, cj_contrast, cj_sat, and cj_hue are multiplied by this value. For datasets with small images, such as CIFAR, it is recommended to set cj_strenght to 0.5.
+    cj_bright: 0.0 # default = 0.8; How much to jitter brightness.
+    cj_contrast: 0.0 # default = 0.8; How much to jitter constrast.
+    cj_sat: 0.0 # default = 0.8; How much to jitter saturation.
+    cj_hue: 0.0 # default = 0.2; How much to jitter hue.
+    min_scale: 0.05 # default = 0.08; Minimum size of the randomized crop relative to the input_size.
+    random_gray_scale: 0.2 # default = 0.2; Probability of conversion to grayscale.
+    gaussian_blur: 0.5 # default = 0.5; Probability of Gaussian blur.
+    sigmas: [0.1,2] # default = (0.1, 2); Tuple of min and max value from which the std of the gaussian kernel is sampled. Is ignored if kernel_size is set.
+    vf_prob: 0.2 # default = 0.0; Probability that vertical flip is applied.
+    hf_prob: 0.0 # default = 0.5; Probability that horizontal flip is applied.
+    rr_prob: 0.2 # default = 0.0; Probability that random rotation is applied.
+    rr_degrees: 45 # default = 90; Range of degrees to select from for random rotation. If rr_degrees is None, images are rotated by 90 degrees. If rr_degrees is a (min, max) tuple, images are rotated by a random angle in [min, max]. If rr_degrees is a single number, images are rotated by a random angle in [-rr_degrees, +rr_degrees]. All rotations are counter-clockwise.
