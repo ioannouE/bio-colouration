@@ -1,0 +1,87 @@
+site_name: Phenoscape
+site_description: Unlocking the complexity of organismal colour patterns using AI
+site_author: Your Name
+site_url: https://your-username.github.io/bio-colouration
+
+repo_name: bio-colouration
+repo_url: https://github.com/your-username/bio-colouration
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: black
+      accent: grey
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: grey
+      accent: white
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.indexes
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Overview: getting-started/overview.md
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quickstart.md
+  - Data Types:
+    - RGB Images: data/rgb.md
+    - Multispectral Data: data/multispectral.md
+    - Hyperspectral Data: data/hyperspectral.md
+  - SimCLR Module:
+    - Introduction: simclr/introduction.md
+    - Configuration: simclr/configuration.md
+    - Training: simclr/training.md
+    - Multispectral Training: simclr/multispectral.md
+    - Hyperspectral Training: simclr/hyperspectral.md
+    - Cross-Modal Learning: simclr/cross-modal.md
+    - Data Augmentation: simclr/augmentation.md
+  - Evaluation & Visualization:
+    - Overview: eval/overview.md
+    - Embedding Analysis: eval/analysis.md
+    - Visualization Tools: eval/visualization.md
+    - Statistical Metrics: eval/metrics.md
+  - Advanced Topics:
+    - HPC Usage: advanced/hpc.md
+    - Model Architectures: advanced/architectures.md
+    - Performance Optimization: advanced/optimization.md
+  - Examples:
+    - Basic Usage: examples/basic.md
+    - Multispectral Analysis: examples/multispectral.md
+    - Hyperspectral Analysis: examples/hyperspectral.md
+  - Contributing: contributing.md
+  - Changelog: changelog.md
