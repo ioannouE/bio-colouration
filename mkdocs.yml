@@ -8,6 +8,9 @@ repo_url: https://github.com/ioannouE/bio-colouration
 
 theme:
   name: material
+  icon:
+    logo: material/bird
+  favicon: https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f426.svg
   palette:
     - scheme: default
       primary: black

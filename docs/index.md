@@ -1,10 +1,8 @@
-# Bio-Colouration AI Analysis
-
-**Unlocking the complexity of organismal colour patterns using AI**
+# Phenoscape: Unlocking the complexity of organismal colour patterns using AI
 
 This project provides a comprehensive framework for analyzing and characterizing colour pattern variation within and between bird species using advanced machine learning techniques, particularly contrastive learning with SimCLR.
 
-## 🎯 Project Overview
+## Project Overview
 
 The repository contains code for analyzing biological colour patterns across three different data modalities:
 
@@ -12,7 +10,7 @@ The repository contains code for analyzing biological colour patterns across thr
 - **Multispectral Data**: 7-channel data including visible and UV spectrum
 - **Hyperspectral Data**: 408-band spectral data from the University of St Andrews Lepidoptera Database
 
-## 🚀 Key Features
+## Key Features
 
 ### SimCLR Implementation
 - Contrastive learning for generating meaningful embeddings
@@ -26,7 +24,7 @@ The repository contains code for analyzing biological colour patterns across thr
 - Interactive visualizations with image thumbnails
 - PCA-transformed embedding analysis
 
-## 🔬 Research Applications
+## Research Applications
 
 This framework is designed for researchers working on:
 
@@ -35,7 +33,7 @@ This framework is designed for researchers working on:
 - **Comparative Biology**: Analyzing patterns across species
 - **Spectral Imaging**: Working with multispectral and hyperspectral data
 
-## 📊 Supported Data Types
+## Supported Data Types
 
 | Data Type | Channels | Description |
 |-----------|----------|-------------|
@@ -43,7 +41,7 @@ This framework is designed for researchers working on:
 | Multispectral | 7 | RGB (1-3) + UV (4-6) + Segmentation mask (7) |
 | Hyperspectral | 408 | Full spectral range 348-809 nm |
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **PyTorch** for deep learning
 - **Lightly** for self-supervised learning
@@ -51,7 +49,7 @@ This framework is designed for researchers working on:
 - **Scikit-learn** for analysis and evaluation
 - **Rasterio** for geospatial data handling
 
-## 📖 Quick Navigation
+## Quick Navigation
 
 - **[Getting Started](getting-started/overview.md)**: Installation and setup guide
 - **[Data Types](data/rgb.md)**: Understanding different data modalities
@@ -59,15 +57,15 @@ This framework is designed for researchers working on:
 - **[Evaluation Tools](eval-vis/overview.md)**: Analysis and visualization utilities
 - **[Examples](examples/basic.md)**: Practical usage examples
 
-## 🎓 Citation
+## Citation
 
 If you use this code in your research, please cite:
 
 ```bibtex
 @misc{bio-colouration,
-  title={Bio-Colouration AI Analysis},
-  author={Your Name},
-  year={2024},
+  title={Phenoscape: Unlocking the complexity of organismal colour patterns using AI},
+  author={Cooney Lab},
+  year={2025},
   url={https://github.com/your-username/bio-colouration}
 }
 ```
