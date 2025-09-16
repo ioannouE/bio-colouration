@@ -61,11 +61,7 @@ pip install mmcv-full==1.5.0
 pip install mmsegmentation==0.27.0
 ```
 
-For SAM-2 segmentation:
 
-```bash
-pip install git+https://github.com/facebookresearch/segment-anything-2.git
-```
 
 ## HPC Setup (Bessemer Cluster)
 
@@ -88,7 +84,7 @@ python -c "import torch; print(f'CUDA available: {torch.cuda.is_available()}')"
 ## Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/bio-colouration.git
+git clone https://github.com/ioannouE/bio-colouration.git
 cd bio-colouration
 ```
 

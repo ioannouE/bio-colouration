@@ -1,10 +1,10 @@
 site_name: Phenoscape
 site_description: Unlocking the complexity of organismal colour patterns using AI
-site_author: Your Name
-site_url: https://your-username.github.io/bio-colouration
+site_author: ei
+site_url: https://ioannoue.github.io/phenoscape
 
 repo_name: bio-colouration
-repo_url: https://github.com/your-username/bio-colouration
+repo_url: https://github.com/ioannouE/bio-colouration
 
 theme:
   name: material
@@ -83,5 +83,3 @@ nav:
     - Basic Usage: examples/basic.md
     - Multispectral Analysis: examples/multispectral.md
     - Hyperspectral Analysis: examples/hyperspectral.md
-  - Contributing: contributing.md
-  - Changelog: changelog.md
