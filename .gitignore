@@ -188,8 +188,8 @@ aesthetics/APDDv2/*.png
 aesthetics/LLM/*.csv
 aesthetics/LLM/*.png
 
-simclr/plots/*.csv 
-simclr/plots/*.png 
+code/plots/*.csv 
+code/plots/*.png 
 
 
 aesthetics/LLM/iratebirds/*.xlsx
@@ -198,12 +198,33 @@ aesthetics/LLM/iratebirds/*.R
 aesthetics/LLM/iratebirds/*.png
 aesthetics/LLM/*.txt
 
-simclr/plots/cv_diss_matrix/
+code/plots/cv_diss_matrix/
 
-simclr/lepidoptera/*.png
+code/lepidoptera/*.png
 
-simclr/augmentation_examples/
-simclr/*.png
+code/augmentation_examples/
+code/*.png
 
 *.png 
-simclr/tmp/
+code/tmp/
+
+# Model files and checkpoints
+*.pth
+*.ckpt
+*.pt
+*.safetensors
+*.bin
+*.h5
+*.hdf5
+
+# Large data files
+*.npy
+*.npz
+*.pkl
+*.pickle
+
+# Temporary and cache files
+**/tmp/
+**/__pycache__/
+.cache/
+*.tmp
