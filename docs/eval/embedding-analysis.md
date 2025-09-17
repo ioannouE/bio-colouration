@@ -502,4 +502,4 @@ def run_complete_embedding_analysis(model, dataloader, output_dir='embedding_ana
 
 - **[Visualization Tools](visualization.md)**: Advanced visualization techniques
 - **[Statistical Metrics](statistical-metrics.md)**: Detailed statistical analysis
-- **[Examples](../examples/)**: Practical analysis examples
+- **[Examples](../examples/example_rgb.md)**: Practical analysis examples

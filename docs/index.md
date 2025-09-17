@@ -1,16 +1,21 @@
-# Phenoscape: Unlocking the complexity of organismal colour patterns using AI
+# Phenoscape: A Contrastive Representation Learning Framework Across the Spectral Domain
 
-This project provides a comprehensive framework for analyzing and characterizing colour pattern variation within and between bird species using advanced machine learning techniques, particularly contrastive learning with SimCLR.
+**Phenoscape** is a comprehensive framework for analyzing organismal colour patterns using artificial intelligence. This project focuses on understanding colour pattern variation within and between biological species through modern machine learning techniques.
 
-## Project Overview
 
-The repository contains code for analyzing biological colour patterns across three different data modalities:
+## What is Phenoscape?
 
-- **RGB Images**: Standard color images of biological organisms
-- **Multispectral Data**: 7-channel data including visible and UV spectrum
-- **Hyperspectral Data**: 408-band spectral data from the University of St Andrews Lepidoptera Database
+Phenoscape combines state-of-the-art computer vision and contrastive learning methods to analyze biological colour patterns across multiple spectral modalities. The framework is built around SimCLR (Simple Contrastive Learning of Visual Representations) and provides tools for both training models and evaluating embeddings.
+
+
 
 ## Key Features
+
+### Multi-Modal Data Support
+- **RGB Images**: Standard colour images of biological organisms
+- **Multispectral Data**: 7-channel data including visible and ultraviolet spectrum
+- **Hyperspectral Data**: 408-band spectral imaging from specialised databases
+
 
 ### SimCLR Implementation
 - Contrastive learning for generating meaningful embeddings
@@ -20,8 +25,8 @@ The repository contains code for analyzing biological colour patterns across thr
 
 ### Evaluation & Visualization
 - Comprehensive embedding analysis tools
-- Statistical metrics (R², Kruskal-Wallis H test)
-- Interactive visualizations with image thumbnails
+- Statistical metrics (Silhouette score, Variance explained)
+- Interactive visualisations with image thumbnails (UMAP, t-SNE)
 - PCA-transformed embedding analysis
 
 ## Research Applications
@@ -29,8 +34,8 @@ The repository contains code for analyzing biological colour patterns across thr
 This framework is designed for researchers working on:
 
 - **Biological Pattern Analysis**: Understanding colour variation in organisms
-- **Computer Vision**: Developing robust visual representations
-- **Comparative Biology**: Analyzing patterns across species
+- **Computer Vision**: Developing robust visual representations for biological data
+- **Comparative Biology**: Analyzing phenotypic variation across species
 - **Spectral Imaging**: Working with multispectral and hyperspectral data
 
 ## Supported Data Types
@@ -51,22 +56,27 @@ This framework is designed for researchers working on:
 
 ## Quick Navigation
 
-- **[Getting Started](getting-started/overview.md)**: Installation and setup guide
+- **[Getting Started](getting-started/quickstart.md)**: Installation and setup guide
 - **[Data Types](data/rgb.md)**: Understanding different data modalities
 - **[SimCLR Module](simclr/introduction.md)**: Core contrastive learning implementation
-- **[Evaluation Tools](eval-vis/overview.md)**: Analysis and visualization utilities
-- **[Examples](examples/basic.md)**: Practical usage examples
+- **[Evaluation Tools](eval/overview.md)**: Analysis and visualization utilities
+- **[Examples](examples/example_rgb.md)**: Practical usage examples
+
+
+## Acknowledgements
+
+This work was supported by the BBSRC: [Unlocking the complexity of organismal colour patterns using AI](https://gtr.ukri.org/projects?ref=BB%2FY513830%2F1). The toolkit is built on top of Google's SimCLR implementation.
 
 ## Citation
 
 If you use this code in your research, please cite:
 
 ```bibtex
-@misc{bio-colouration,
-  title={Phenoscape: Unlocking the complexity of organismal colour patterns using AI},
+@misc{phenoscape2025,
+  title={Phenoscape: A Contrastive Representation Learning Framework Across the Spectral Domain},
   author={Cooney Lab},
   year={2025},
-  url={https://github.com/your-username/bio-colouration}
+  url={https://github.com/ioannouE/bio-colouration}
 }
 ```
 

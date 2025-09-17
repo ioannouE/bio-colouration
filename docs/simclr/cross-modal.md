@@ -455,4 +455,4 @@ done
 
 - **[Data Augmentation](augmentation.md)**: Modality-specific augmentation strategies
 - **[Evaluation](../eval/overview.md)**: Cross-modal evaluation techniques
-- **[Examples](../examples/multispectral.md)**: Practical cross-modal applications
+- **[Examples](../examples/example_multispectral.md)**: Practical cross-modal applications

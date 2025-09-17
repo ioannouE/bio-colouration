@@ -215,4 +215,3 @@ python scripts/simclr_birdcolour_kornia_hyperspectral.py \
 
 - **[Multispectral Data](multispectral.md)**: Lower-resolution spectral data
 - **[Training](../simclr/training.md)**: General training procedures
-- **[Performance Optimization](../advanced/optimization.md)**: Memory and speed optimization

@@ -139,6 +139,6 @@ The evaluation generates:
 
 ## Next Steps
 
-- **[Embedding Analysis](analysis.md)**: Detailed statistical methods
+- **[Embedding Analysis](embedding-analysis.md)**: Detailed statistical methods
 - **[Visualization Tools](visualization.md)**: Advanced plotting options
-- **[Statistical Metrics](metrics.md)**: Comprehensive metric explanations
+- **[Statistical Metrics](statistical-metrics.md)**: Comprehensive metric explanations

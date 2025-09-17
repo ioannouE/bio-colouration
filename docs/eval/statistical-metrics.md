@@ -617,4 +617,4 @@ def generate_statistical_report(embeddings, labels, metadata_df=None,
 
 - **[Embedding Analysis](embedding-analysis.md)**: Advanced embedding analysis techniques  
 - **[Visualization Tools](visualization.md)**: Visual analysis methods
-- **[Examples](../examples/)**: Practical statistical analysis examples
+- **[Examples](../examples/example_rgb.md)**: Practical statistical analysis examples

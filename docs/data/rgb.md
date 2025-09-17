@@ -93,4 +93,4 @@ python scripts/generate_embeddings.py \
 
 - **[Multispectral Data](multispectral.md)**: Extended spectral information
 - **[Training](../simclr/training.md)**: Model training procedures
-- **[Examples](../examples/basic.md)**: Practical usage examples
+- **[Examples](../examples/example_rgb.md)**: Practical usage examples

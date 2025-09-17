@@ -7,7 +7,7 @@ repo_name: bio-colouration
 repo_url: https://github.com/ioannouE/bio-colouration
 
 theme:
-  name: material
+  name: readthedocs
   icon:
     logo: material/bird
   favicon: https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f426.svg
@@ -58,7 +58,6 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Getting Started:
-    - Overview: getting-started/overview.md
     - Installation: getting-started/installation.md
     - Quick Start: getting-started/quickstart.md
   - Data Types:
@@ -75,14 +74,10 @@ nav:
     - Data Augmentation: simclr/augmentation.md
   - Evaluation & Visualization:
     - Overview: eval/overview.md
-    - Embedding Analysis: eval/analysis.md
+    - Embedding Analysis: eval/embedding-analysis.md
     - Visualization Tools: eval/visualization.md
-    - Statistical Metrics: eval/metrics.md
-  - Advanced Topics:
-    - HPC Usage: advanced/hpc.md
-    - Model Architectures: advanced/architectures.md
-    - Performance Optimization: advanced/optimization.md
+    - Statistical Metrics: eval/statistical-metrics.md
   - Examples:
-    - Basic Usage: examples/basic.md
-    - Multispectral Analysis: examples/multispectral.md
-    - Hyperspectral Analysis: examples/hyperspectral.md
+    - Basic Usage (RGB): examples/example_rgb.md
+    - Multispectral Analysis: examples/example_multispectral.md
+    - Hyperspectral Analysis: examples/example_hyperspectral.md

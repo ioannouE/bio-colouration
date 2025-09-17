@@ -566,5 +566,5 @@ def create_comprehensive_visualization_report(embeddings, labels, metadata=None,
 ## Next Steps
 
 - **[Statistical Metrics](statistical-metrics.md)**: Quantitative analysis methods
-- **[Examples](../examples/)**: Practical visualization examples
+- **[Examples](../examples/example_rgb.md)**: Practical visualization examples
 - **[Embedding Analysis](embedding-analysis.md)**: Advanced embedding analysis techniques
