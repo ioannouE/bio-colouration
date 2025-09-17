@@ -1,7 +1,5 @@
 import os, sys
 import argparse
-## utils from the colour feature
-# sys.path.append("C:/Users/Yichen/OneDrive/work/codes/shef_bird_colour/image_features")
 import utils
 
 import eval_utils

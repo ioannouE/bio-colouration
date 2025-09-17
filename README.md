@@ -32,7 +32,6 @@ The conda environment created has the following packages:
 - `mmsegmentation`              0.27.0
 - `opencv-python`               4.11.0.86
 - `opencv-python-headless`      4.11.0.86
-- `SAM-2`                       1.0
 - `scikit-image`                0.25.2
 - `scikit-learn`                1.6.1
 - `tensorboard`                 2.19.0
