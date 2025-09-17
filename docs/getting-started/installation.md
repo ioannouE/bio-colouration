@@ -4,7 +4,7 @@ This guide will help you set up Phenoscape on your system.
 
 ## Prerequisites
 
-- Python 3.8 or higher
+- Python 3.10 or higher
 - CUDA-compatible GPU (recommended for training)
 - Git
 
@@ -15,7 +15,7 @@ This guide will help you set up Phenoscape on your system.
 Create a new conda environment with the required packages:
 
 ```bash
-conda create -n phenoscape python=3.8
+conda create -n phenoscape python=3.10
 conda activate phenoscape
 ```
 
@@ -63,15 +63,6 @@ pip install mmsegmentation==0.27.0
 
 
 
-## HPC Setup (Bessemer Cluster)
-
-If you're using the Bessemer HPC cluster:
-
-```bash
-module load Anaconda3/2019.07
-module load cuDNN/8.0.4.30-CUDA-11.1.1
-```
-
 ## Verify Installation
 
 Test your installation by running:
@@ -101,5 +92,3 @@ cd bio-colouration
 **CUDA Out of Memory**: Reduce batch size in configuration files
 **Import Errors**: Ensure all dependencies are installed in the correct environment
 **Permission Errors**: Check file permissions and directory access
-
-For more help, see the [Performance Optimization](../advanced/optimization.md) guide.

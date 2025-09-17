@@ -10,15 +10,13 @@ Organize your RGB images in a directory structure:
 
 ```
 data/
-├── species_a/
-│   ├── image1.jpg
-│   ├── image2.jpg
-│   └── ...
-└── species_b/
-    ├── image1.jpg
-    ├── image2.jpg
-    └── ...
+├── image1.jpg
+├── image2.jpg
+└── ...
 ```
+
+For the evaluation purposes, the images' names should be in the format `species_sex_001.jpg`, `species_sex_002.jpg`, etc. For training SimCLR and generating embeddings, the images' names could be in any format e.g., `image1.jpg`, `image2.jpg`, etc.
+
 
 ### 2. Configure Training
 
@@ -26,7 +24,7 @@ Create or modify `config.yaml`:
 
 ```yaml
 data_dir: "path/to/your/data"
-out_dir: "outputs"
+out_dir: "path/to/your/output"
 backbone: "resnet50"
 weights: "DEFAULT"
 lr: 0.001
@@ -83,7 +81,7 @@ python scripts/simclr_birdcolour_kornia_hyperspectral.py --config configs/config
 
 After running the pipeline, you'll get:
 
-- **Trained model**: `outputs/model.ckpt`
+- **Trained model**: `checkpoints/model.ckpt`
 - **Embeddings**: CSV file with feature vectors
 - **Visualizations**: UMAP/t-SNE plots with image thumbnails
 - **Metrics**: Statistical analysis results
@@ -93,10 +91,6 @@ After running the pipeline, you'll get:
 - **[Data Types](../data/rgb.md)**: Learn about different data formats
 - **[SimCLR Configuration](../simclr/configuration.md)**: Customize training parameters
 - **[Evaluation Tools](../eval/overview.md)**: Explore analysis options
-- **[Examples](../examples/basic.md)**: See detailed use cases
+- **[Examples](../examples/example_rgb.md)**: See detailed use cases
 
-## Quick Tips
 
-- Start with smaller datasets to test your setup
-- Monitor GPU memory usage and adjust batch size accordingly
-- Use tensorboard to track training progress: `tensorboard --logdir outputs`
