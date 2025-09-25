@@ -1,11 +1,11 @@
-# Phenoscape: A Contrastive Representation Learning Framework Across the Spectral Domain
+# PhenoCLR: A Contrastive Representation Learning Framework Across the Spectral Domain
 
-**Phenoscape** is a comprehensive framework for analyzing organismal colour patterns using artificial intelligence. This project focuses on understanding colour pattern variation within and between biological species through modern machine learning techniques.
+**PhenoCLR** is a comprehensive framework for analyzing organismal colour patterns using artificial intelligence. This project focuses on understanding colour pattern variation within and between biological species through modern machine learning techniques.
 
 
-## What is Phenoscape?
+## What is PhenoCLR?
 
-Phenoscape combines state-of-the-art computer vision and contrastive learning methods to analyze biological colour patterns across multiple spectral modalities. The framework is built around SimCLR (Simple Contrastive Learning of Visual Representations) and provides tools for both training models and evaluating embeddings.
+PhenoCLR combines state-of-the-art computer vision and contrastive learning methods to analyze biological colour patterns across multiple spectral modalities. The framework is built around SimCLR (Simple Contrastive Learning of Visual Representations) and provides tools for both training models and evaluating embeddings.
 
 
 
@@ -72,8 +72,8 @@ This work was supported by the BBSRC: [Unlocking the complexity of organismal co
 If you use this code in your research, please cite:
 
 ```bibtex
-@misc{phenoscape2025,
-  title={Phenoscape: A Contrastive Representation Learning Framework Across the Spectral Domain},
+@misc{bio-colouration2025,
+  title={A Contrastive Representation Learning Framework Across the Spectral Domain},
   author={Cooney Lab},
   year={2025},
   url={https://github.com/ioannouE/bio-colouration}

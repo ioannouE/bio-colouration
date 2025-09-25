@@ -1,7 +1,7 @@
-site_name: Phenoscape
+site_name: PhenoCLR
 site_description: Unlocking the complexity of organismal colour patterns using AI
 site_author: ei
-site_url: https://ioannoue.github.io/phenoscape
+site_url: https://ioannoue.github.io/phenoclr
 
 repo_name: bio-colouration
 repo_url: https://github.com/ioannouE/bio-colouration
