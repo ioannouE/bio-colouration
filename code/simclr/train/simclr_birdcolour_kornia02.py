@@ -31,11 +31,11 @@ import kornia
 import torchvision.transforms.v2 as v2
 
 import tempfile
-# Set temporary directory on same filesystem as checkpoint destination
-tmpdir = "/shared/cooney_lab/Shared/Eleftherios-Ioannou/tmp"
-os.environ["TMPDIR"] = tmpdir
-os.environ["FSSPEC_TEMP"] = tmpdir
-tempfile.tempdir = tmpdir
+# Set temporary directory on same filesystem as checkpoint destination - needed for Bessemer
+# tmpdir = "/shared/cooney_lab/Shared/Eleftherios-Ioannou/tmp"
+# os.environ["TMPDIR"] = tmpdir
+# os.environ["FSSPEC_TEMP"] = tmpdir
+# tempfile.tempdir = tmpdir
 
 def get_mean_lab_color(x):
     # x: (B, 3, H, W) in range [0, 1] (assumed)
@@ -352,13 +352,15 @@ class SimCLRModel(pl.LightningModule):
         z1 = self.forward(x1)
         loss_simclr = self.criterion(z0, z1)
 
-        color0 = get_mean_lab_color(x0)
-        color1 = get_mean_lab_color(x1)
-
         # Colour consistency loss (L2 distance)
-        loss_colour = self.mse_loss(color0, color1)
-        # Total loss
-        loss = loss_simclr + 0.25 * loss_colour
+        color_consistency = 0
+        if color_consistency > 0:
+            color0 = get_mean_lab_color(x0)
+            color1 = get_mean_lab_color(x1)
+            loss_colour = self.mse_loss(color0, color1)
+            loss = loss_simclr + color_consistency * loss_colour
+        else:
+            loss = loss_simclr
         self.log("train_loss_ssl", loss)
         return loss
 
