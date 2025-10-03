@@ -38,7 +38,7 @@ log_every_n_steps: 50
 
 ```bash
 cd simclr
-python scripts/simclr_birdcolour.py --config config.yaml
+python train/simclr_birdcolour.py --config config.yaml
 ```
 
 ### 3. Monitor Progress
@@ -250,22 +250,22 @@ model = torch.compile(model)
 
 ### Basic RGB Training
 ```bash
-python scripts/simclr_birdcolour.py --config configs/rgb_basic.yaml
+python train/simclr_birdcolour.py --config configs/rgb_basic.yaml
 ```
 
 ### High-Resolution Training
 ```bash
-python scripts/simclr_birdcolour.py --config configs/rgb_high_res.yaml
+python train/simclr_birdcolour.py --config configs/rgb_high_res.yaml
 ```
 
 ### Multi-GPU Training
 ```bash
-python scripts/simclr_birdcolour.py --config configs/multi_gpu.yaml
+python train/simclr_birdcolour.py --config configs/multi_gpu.yaml
 ```
 
 ### Resume Training
 ```bash
-python scripts/simclr_birdcolour.py \
+python train/simclr_birdcolour.py \
   --config configs/resume.yaml \
   --resume outputs/experiment/checkpoints/last.ckpt
 ```

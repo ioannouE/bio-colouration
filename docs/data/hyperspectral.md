@@ -68,19 +68,19 @@ sample_bands: null  # Use all bands, or specify subset
 ### Full Spectrum
 Use all 408 bands:
 ```bash
-python scripts/simclr_birdcolour_kornia_hyperspectral.py
+python train/simclr_birdcolour_kornia_hyperspectral.py
 ```
 
 ### RGB Approximation
 Use bands closest to RGB wavelengths (450nm, 550nm, 650nm):
 ```bash
-python scripts/simclr_birdcolour_kornia_hyperspectral.py --rgb-only
+python train/simclr_birdcolour_kornia_hyperspectral.py --rgb-only
 ```
 
 ### Custom Band Selection
 Sample specific bands:
 ```bash
-python scripts/simclr_birdcolour_kornia_hyperspectral.py \
+python train/simclr_birdcolour_kornia_hyperspectral.py \
   --sample-bands 0,50,100,150,200,250,300,350,400
 ```
 
@@ -121,13 +121,13 @@ Choose between different loss strategies:
 
 ```bash
 # Global loss only (standard SimCLR)
-python scripts/simclr_birdcolour_kornia_hyperspectral.py --loss-type global
+python train/simclr_birdcolour_kornia_hyperspectral.py --loss-type global
 
 # Local patch-based loss
-python scripts/simclr_birdcolour_kornia_hyperspectral.py --loss-type local
+python train/simclr_birdcolour_kornia_hyperspectral.py --loss-type local
 
 # Combined global and local loss
-python scripts/simclr_birdcolour_kornia_hyperspectral.py \
+python train/simclr_birdcolour_kornia_hyperspectral.py \
   --loss-type combined \
   --global-weight 0.7 \
   --local-weight 0.3
@@ -183,16 +183,16 @@ reduced_data = pca.fit_transform(data.reshape(-1, 408))
 
 ```bash
 # Train on full hyperspectral data
-python scripts/simclr_birdcolour_kornia_hyperspectral.py \
+python train/simclr_birdcolour_kornia_hyperspectral.py \
   --config configs/config_kornia_hyperspectral.yaml
 
 # Train on sampled bands
-python scripts/simclr_birdcolour_kornia_hyperspectral.py \
+python train/simclr_birdcolour_kornia_hyperspectral.py \
   --sample-bands 0,25,50,75,100,125,150,175,200 \
   --loss-type combined
 
 # Generate embeddings only (skip training)
-python scripts/simclr_birdcolour_kornia_hyperspectral.py \
+python train/simclr_birdcolour_kornia_hyperspectral.py \
   --test-embeddings-only \
   --model-checkpoint outputs/hyperspectral_model.ckpt
 ```

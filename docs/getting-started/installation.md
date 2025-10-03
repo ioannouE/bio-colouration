@@ -8,6 +8,14 @@ This guide will help you set up Phenoscape on your system.
 - CUDA-compatible GPU (recommended for training)
 - Git
 
+## Clone the Repository
+
+```bash
+git clone https://github.com/ioannouE/bio-colouration.git
+cd bio-colouration
+```
+
+
 ## Environment Setup
 
 ### Option 1: Conda Environment (Recommended)
@@ -15,15 +23,15 @@ This guide will help you set up Phenoscape on your system.
 Create a new conda environment with the required packages:
 
 ```bash
-conda create -n phenoscape python=3.10
-conda activate phenoscape
+conda create -n phenoclr python=3.10
+conda activate phenoclr
 ```
 
 ### Option 2: Virtual Environment
 
 ```bash
-python -m venv phenoscape-env
-source phenoscape-env/bin/activate  # On Windows: phenoscape-env\Scripts\activate
+python -m venv phenoclr-env
+source phenoclr-env/bin/activate  # On Windows: phenoclr-env\Scripts\activate
 ```
 
 ## Install Dependencies
@@ -72,12 +80,6 @@ python -c "import torch; print(f'PyTorch version: {torch.__version__}')"
 python -c "import torch; print(f'CUDA available: {torch.cuda.is_available()}')"
 ```
 
-## Clone the Repository
-
-```bash
-git clone https://github.com/ioannouE/bio-colouration.git
-cd bio-colouration
-```
 
 ## Next Steps
 

@@ -80,10 +80,10 @@ RGB images support extensive augmentation options:
 
 ```bash
 # Train SimCLR on RGB data
-python scripts/simclr_birdcolour.py --config config_rgb.yaml
+python train/simclr_birdcolour.py --config configs/config_rgb.yaml
 
 # Generate embeddings
-python scripts/generate_embeddings.py \
+python embeddings/generate_embeddings.py \
   --model-path outputs/rgb_model.ckpt \
   --data-dir data/rgb_images \
   --output embeddings_rgb.csv

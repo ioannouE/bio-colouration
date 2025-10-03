@@ -50,28 +50,28 @@ batch_size: 2
 
 ### Full Spectrum Training
 ```bash
-python scripts/simclr_birdcolour_kornia_hyperspectral.py \
+python train/simclr_birdcolour_kornia_hyperspectral.py \
   --config configs/config_kornia_hyperspectral.yaml
 ```
 
 ### RGB Approximation
 Use bands closest to RGB wavelengths:
 ```bash
-python scripts/simclr_birdcolour_kornia_hyperspectral.py \
+python train/simclr_birdcolour_kornia_hyperspectral.py \
   --config configs/config_kornia_hyperspectral.yaml \
   --rgb-only
 ```
 
 ### Custom Band Sampling
 ```bash
-python scripts/simclr_birdcolour_kornia_hyperspectral.py \
+python train/simclr_birdcolour_kornia_hyperspectral.py \
   --config configs/config_kornia_hyperspectral.yaml \
   --sample-bands 0,50,100,150,200,250,300,350,400
 ```
 
 ### Combined Loss Training
 ```bash
-python scripts/simclr_birdcolour_kornia_hyperspectral.py \
+python train/simclr_birdcolour_kornia_hyperspectral.py \
   --config configs/config_kornia_hyperspectral.yaml \
   --loss-type combined \
   --global-weight 0.6 \

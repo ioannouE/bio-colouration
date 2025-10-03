@@ -71,21 +71,21 @@ use_segmentation_mask: true
 Use only visible channels (1-3):
 
 ```bash
-python scripts/simclr_kornia_spectral.py --rgb-only
+python train/simclr_kornia_spectral.py --rgb-only
 ```
 
 ### Full Spectral Mode
 Use all 6 spectral channels:
 
 ```bash
-python scripts/simclr_kornia_spectral.py --config configs/config_kornia_multispectral.yaml
+python train/simclr_kornia_spectral.py --config configs/config_kornia_multispectral.yaml
 ```
 
 ### Cross-Modal Learning
 Compare RGB and UV representations:
 
 ```bash
-python scripts/simclr_birdcolour_kornia_spectral_multimodal.py \
+python train/simclr_birdcolour_kornia_spectral_multimodal.py \
   --fusion-type separate \
   --use-modality-specific
 ```
@@ -117,7 +117,7 @@ fusion_type: "attention"
 Convert to tetrahedral color space for UV-sensitive analysis:
 
 ```bash
-python scripts/simclr_kornia_spectral.py --usml
+python train/simclr_kornia_spectral.py --usml
 ```
 
 ## Data Preprocessing
@@ -159,11 +159,11 @@ masked_data = data * mask.unsqueeze(1)  # Broadcast mask across channels
 
 ```bash
 # Train on full multispectral data
-python scripts/simclr_kornia_spectral.py \
+python train/simclr_kornia_spectral.py \
   --config configs/config_kornia_multispectral.yaml
 
 # Train with cross-modal contrastive learning
-python scripts/simclr_birdcolour_kornia_spectral_multimodal.py \
+python train/simclr_birdcolour_kornia_spectral_multimodal.py \
   --fusion-type attention \
   --global-weight 0.7 \
   --local-weight 0.3
