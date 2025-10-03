@@ -7,7 +7,7 @@ repo_name: bio-colouration
 repo_url: https://github.com/ioannouE/bio-colouration
 
 theme:
-  name: material
+  name: readthedocs
   icon:
     logo: material/bird
   favicon: https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f426.svg
@@ -71,7 +71,7 @@ nav:
     - Multispectral Training: simclr/multispectral.md
     - Hyperspectral Training: simclr/hyperspectral.md
     - Cross-Modal Learning: simclr/cross-modal.md
-    - Data-Augmentation: simclr/augmentation.md
+    - Data Augmentation: simclr/augmentation.md
   - Evaluation & Visualization:
     - Overview: eval/overview.md
     - Embedding Analysis: eval/embedding-analysis.md
