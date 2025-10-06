@@ -1,10 +1,10 @@
-# SimCLR Configuration
+# PhenoCLR Configuration
 
-This guide covers configuration options for SimCLR training in the Phenoscape framework. Learn how to set up training parameters, data paths, model architectures, and optimization settings.
+This guide covers configuration options for PhenoCLR training. Learn how to set up training parameters, data paths, model architectures, and optimization settings.
 
 ## Overview
 
-SimCLR configuration is managed through YAML files that define all aspects of training including model architecture, data loading, augmentations, and optimization parameters. The framework supports RGB, multispectral, and hyperspectral data configurations.
+PhenoCLR configuration is managed through YAML files that define all aspects of training including model architecture, data loading, augmentations, and optimization parameters. The framework supports RGB, multispectral, and hyperspectral data configurations.
 
 ## Configuration Structure
 
