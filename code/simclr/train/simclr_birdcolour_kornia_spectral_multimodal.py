@@ -6,6 +6,11 @@ import csv
 import datetime as dt
 import json
 import os
+import sys
+# Add the parent directory of 'train' to the Python path
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+sys.path.insert(0, parent_dir)
 import re
 import yaml
 import glob
@@ -41,16 +46,16 @@ from kornia.constants import BorderType
 from kornia.geometry.transform import get_perspective_transform, warp_perspective
 import kornia 
 
-from multispectral_data import SimCLRDataModule
+from data.multispectral_data import SimCLRDataModule
 import pytz
 import torch.nn.functional as F
 
 import tempfile
 # Set temporary directory on same filesystem as checkpoint destination
-tmpdir = "/shared/cooney_lab/Shared/Eleftherios-Ioannou/tmp"
-os.environ["TMPDIR"] = tmpdir
-os.environ["FSSPEC_TEMP"] = tmpdir
-tempfile.tempdir = tmpdir
+# tmpdir = "/shared/cooney_lab/Shared/Eleftherios-Ioannou/tmp"
+# os.environ["TMPDIR"] = tmpdir
+# os.environ["FSSPEC_TEMP"] = tmpdir
+# tempfile.tempdir = tmpdir
 
 
 
