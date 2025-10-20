@@ -6,20 +6,18 @@ Standard RGB (Red, Green, Blue) images are the most common data type supported b
 
 - **File Types**: `.jpg`, `.jpeg`, `.png`, `.tiff`
 - **Channels**: 3 (Red, Green, Blue)
-- **Bit Depth**: 8-bit or 16-bit per channel
-- **Color Space**: sRGB recommended
 
 ## Data Requirements
 
 ### Image Quality
-- **Resolution**: Minimum 224x224 pixels (higher resolution preferred)
-- **Focus**: Sharp, well-focused images
-- **Lighting**: Consistent, even illumination
-- **Background**: Clean background or pre-segmented regions of interest
+- **Resolution**: Minimum 224x224 pixels (higher resolution preferred).
+- **Focus**: Sharp, well-focused images. The algorithm was tested on museum specimens but it should work on natural images as well.
+- **Lighting**: Preferably consistent, even illumination.
+- **Background**: Clean background or pre-segmented regions of interest.
 
 ### Preprocessing Recommendations
 - **Segmentation**: Remove background to focus on the organism
-- **Standardization**: Consistent orientation and scale
+- **Standardization**: Consistent orientation and scale (preferably). This can be managed using proper augmentations.
 - **Quality Control**: Remove blurry, overexposed, or underexposed images
 
 ## Directory Structure
@@ -40,14 +38,20 @@ data/
 For RGB data, use these settings in your `config.yaml`:
 
 ```yaml
-data_dir: "path/to/rgb/data"
-input_size: 224
-channels: 3
-backbone: "resnet50"  # or "vit_base_patch16_224"
-weights: "DEFAULT"
+data:
+  data_dir: "path/to/rgb/data"
+output:
+  output_dir: "path/to/output/directory"
+model:
+  name: "simclr"
+  backbone: "vit_l_16" # or resnet50
+  weights: "ViT_L_16_Weights" # or IMAGENET1K_V2 for resnet50
+
+augmentations:
+  input_size: 224
 ```
 
-## Data Augmentation
+## Data Augmentations
 
 RGB images support extensive augmentation options:
 
@@ -56,32 +60,18 @@ RGB images support extensive augmentation options:
 - **Noise**: Gaussian blur, random erasing
 - **Advanced**: Elastic deformation, thin plate spline
 
-## Best Practices
 
-### Image Acquisition
-1. Use consistent lighting conditions
-2. Maintain uniform distance and angle
-3. Ensure high contrast between subject and background
-4. Capture multiple views when possible
-
-### Data Preparation
-1. Standardize image sizes and orientations
-2. Apply consistent preprocessing steps
-3. Remove low-quality images
-4. Balance dataset across categories
-
-### Training Considerations
-- Start with pretrained weights for better convergence
-- Use appropriate batch sizes based on GPU memory
-- Monitor for overfitting with validation data
-- Adjust learning rate based on dataset size
 
 ## Example Usage
 
 ```bash
 # Train SimCLR on RGB data
 python train/simclr_birdcolour.py --config configs/config_rgb.yaml
+```
+This will automatically train the model and generate embeddings (csv file) in the output directory.
+We also provide the option to generate embeddings from a pre-trained model:
 
+```bash
 # Generate embeddings
 python embeddings/generate_embeddings.py \
   --model-path outputs/rgb_model.ckpt \

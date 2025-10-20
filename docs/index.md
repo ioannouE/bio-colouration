@@ -26,8 +26,7 @@ PhenoCLR combines state-of-the-art computer vision and contrastive learning meth
 ### Evaluation & Visualization
 - Comprehensive embedding analysis tools
 - Statistical metrics (Silhouette score, Variance explained)
-- Interactive visualisations with image thumbnails (UMAP, t-SNE)
-- PCA-transformed embedding analysis
+- Visualisations with image thumbnails (UMAP, t-SNE)
 
 ## Research Applications
 
