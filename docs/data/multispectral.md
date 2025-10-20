@@ -74,28 +74,28 @@ augmentations:
 Use only visible channels (1-3):
 
 ```bash
-python train/simclr_kornia_spectral.py --rgb-only
+python train/simclr_kornia_spectral_multimodal.py --rgb-only
 ```
 
 ### Full Spectral Mode
 Use all 6 spectral channels:
 
 ```bash
-python train/simclr_kornia_spectral.py --config configs/config_multispectral.yaml
+python train/simclr_kornia_spectral_multimodal.py --config configs/config_multispectral.yaml
 ```
 
 ### Tetrahedral Color Space
 Convert to tetrahedral color space for UV-sensitive analysis:
 
 ```bash
-python train/simclr_kornia_spectral.py --usml
+python train/simclr_kornia_spectral_multimodal.py --usml
 ```
 
 ### UV-Only Mode
 Use only UV channels (4-6):
 
 ```bash
-python train/simclr_kornia_spectral.py --uv-only
+python train/simclr_kornia_spectral_multimodal.py --uv-only
 ```
 
 ### Cross-Modal Learning
