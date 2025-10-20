@@ -1,9 +1,9 @@
 data:
-  data_dir: "/shared/cooney_lab/Shared/RSE/Multispec_test_images_5000" # "/fastdata/bi1ei/Multispec_test_images"Multispec_test_images_5000
+  data_dir: "/mnt/parscratch/users/bi1ei/data/Multispec_test_images_5000" # "/fastdata/bi1ei/Multispec_test_images"Multispec_test_images_5000
   # data_dir: "/mnt/xdrive/cooney_lab/Shared/RSE/Image_sets/Passerines-Segmented-Back-RGB-PNG"
 
 output:
-  out_dir: "/shared/cooney_lab/Shared/Eleftherios-Ioannou/SimCLR/multispectral/"
+  out_dir: "/mnt/parscratch/users/bi1ei/SimCLR/multispectral/"
   # out_dir: "/mnt/xdrive/cooney_lab/Shared/RSE/01_embeddings"
 
 model:
@@ -21,7 +21,6 @@ model:
       eta_min: 0.001
 
   criterion:
-    type: 'crossmodal'
     global_weight: 1.0
     local_weight: 1.0
     name: 'NTXentLoss'  # not yet configurable

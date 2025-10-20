@@ -1,9 +1,9 @@
 data:
-  data_dir: "/shared/cooney_lab/Shared/Chris-Cooney/Data/Image-sets/Segmented-Aves-Back-RGB-PNG" # "/shared/cooney_lab/Shared/data/Perceptual_maps_Heliconiini/Images/"
+  data_dir: "/mnt/parscratch/users/bi1ei/data/Segmented-Aves-Back-RGB-PNG" # "/shared/cooney_lab/Shared/data/Perceptual_maps_Heliconiini/Images/"
   # data_dir: "/mnt/xdrive/cooney_lab/Shared/RSE/Image_sets/Passerines-Segmented-Back-RGB-PNG"
 
 output:
-  out_dir: "/shared/cooney_lab/Shared/Eleftherios-Ioannou/SimCLR/RGB_Segmented_Aves_embeddings/"
+  out_dir: "/mnt/parscratch/users/bi1ei/SimCLR/RGB_Segmented_Aves_embeddings/"
   # out_dir: "/mnt/xdrive/cooney_lab/Shared/RSE/01_embeddings"
 
 model:
