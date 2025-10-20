@@ -9,10 +9,10 @@ Multispectral images extend beyond visible light to capture ultraviolet (UV) inf
   - Channels 1-3: Visible spectrum (Red, Green, Blue)
   - Channels 4-6: Ultraviolet (UV) spectrum
   - Channel 7: Binary segmentation mask
-- **Bit Depth**: 16-bit per channel recommended
 - **Spatial Resolution**: Consistent across all channels
 
 ## Channel Configuration
+Note: This is the configuration used for our multispectral data. Other configurations should also work but may need adjusting the data processing pipeline (`data/multispectral_data.py`).
 
 | Channel | Wavelength Range | Description |
 |---------|------------------|-------------|
@@ -28,9 +28,6 @@ Multispectral images extend beyond visible light to capture ultraviolet (UV) inf
 
 ### Image Quality
 - **Registration**: All channels must be spatially aligned
-- **Calibration**: Spectral calibration across channels
-- **Exposure**: Consistent exposure settings per channel
-- **Focus**: Sharp focus across all spectral bands
 
 ### Segmentation Mask
 The 7th channel should contain a binary mask where:
@@ -41,28 +38,34 @@ The 7th channel should contain a binary mask where:
 
 ```
 data/multispectral/
-├── species_1/
-│   ├── specimen_001.tif
-│   ├── specimen_002.tif
-│   └── ...
-├── species_2/
-│   ├── specimen_001.tif
-│   ├── specimen_002.tif
-│   └── ...
+│   ├── species_sex_001.tif
+│   ├── species_sex_002.tif
+│   └── ... 
 └── metadata.csv
 ```
 
 ## Configuration
 
-For multispectral data training:
+For multispectral data training (`configs/config_multispectral.yaml`):
 
 ```yaml
-data_dir: "path/to/multispectral/data"
-input_size: 224
-channels: 7  # or 6 if excluding mask, 3 if RGB-only
-backbone: "resnet50"
-spectral_mode: "full"  # "rgb_only", "uv_only", or "full"
-use_segmentation_mask: true
+data:
+  data_dir: "path/to/multispectral/data"
+output:
+  out_dir: "path/to/output/directory"
+
+model:
+  name: 'simclr'  
+  backbone: 'vit_l_16'
+  weights: 'ViT_L_16_Weights'
+
+criterion:
+    type: 'crossmodal' # 'crossmodal', 'local', 'global', 'none'
+    global_weight: 1.0
+    local_weight: 1.0
+
+augmentations:
+  input_size: 224
 ```
 
 ## Training Options
@@ -78,7 +81,21 @@ python train/simclr_kornia_spectral.py --rgb-only
 Use all 6 spectral channels:
 
 ```bash
-python train/simclr_kornia_spectral.py --config configs/config_kornia_multispectral.yaml
+python train/simclr_kornia_spectral.py --config configs/config_multispectral.yaml
+```
+
+### Tetrahedral Color Space
+Convert to tetrahedral color space for UV-sensitive analysis:
+
+```bash
+python train/simclr_kornia_spectral.py --usml
+```
+
+### UV-Only Mode
+Use only UV channels (4-6):
+
+```bash
+python train/simclr_kornia_spectral.py --uv-only
 ```
 
 ### Cross-Modal Learning
