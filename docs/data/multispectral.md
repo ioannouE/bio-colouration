@@ -128,55 +128,12 @@ Use attention mechanisms to combine modalities:
 fusion_type: "attention"
 ```
 
-## Color Space Transformations
-
-### USML Color Space
-Convert to tetrahedral color space for UV-sensitive analysis:
-
-```bash
-python train/simclr_kornia_spectral.py --usml
-```
-
-## Data Preprocessing
-
-### Channel Normalization
-```python
-# Normalize each channel independently
-for channel in range(6):  # Exclude mask channel
-    data[:, channel] = (data[:, channel] - mean[channel]) / std[channel]
-```
-
-### Mask Application
-```python
-# Apply segmentation mask
-masked_data = data * mask.unsqueeze(1)  # Broadcast mask across channels
-```
-
-## Best Practices
-
-### Data Acquisition
-1. Ensure proper spectral calibration
-2. Maintain consistent lighting conditions
-3. Use appropriate filters for UV channels
-4. Verify channel registration accuracy
-
-### Preprocessing
-1. Check for spectral artifacts
-2. Validate segmentation masks
-3. Normalize channels appropriately
-4. Handle missing or corrupted channels
-
-### Training Considerations
-- UV channels may have different noise characteristics
-- Consider channel-specific augmentations
-- Monitor for modality-specific overfitting
-- Use appropriate loss weighting for cross-modal learning
 
 ## Example Usage
 
 ```bash
 # Train on full multispectral data
-python train/simclr_kornia_spectral.py \
+python train/simclr_kornia_spectral_multimodal.py \
   --config configs/config_kornia_multispectral.yaml
 
 # Train with cross-modal contrastive learning
@@ -185,14 +142,6 @@ python train/simclr_birdcolour_kornia_spectral_multimodal.py \
   --global-weight 0.7 \
   --local-weight 0.3
 ```
-
-## Troubleshooting
-
-### Common Issues
-- **Channel misalignment**: Check image registration
-- **UV noise**: Adjust preprocessing parameters
-- **Memory issues**: Reduce batch size for 7-channel data
-- **Convergence problems**: Try different fusion strategies
 
 ## Related Topics
 

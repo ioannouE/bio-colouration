@@ -55,12 +55,20 @@ data/hyperspectral/lepidoptera/
 For hyperspectral data training:
 
 ```yaml
-data_dir: "data/hyperspectral/lepidoptera"
-input_size: 224
-channels: 408  # Full hyperspectral
-backbone: "resnet50"
-hyperspectral_mode: "full"
-sample_bands: null  # Use all bands, or specify subset
+data: 
+  data_dir: "data/hyperspectral/lepidoptera"
+
+output:
+  out_dir: "path/to/output/directory"
+
+model:
+  name: 'simclr'  
+  backbone: 'vit_l_16'
+  weights: 'ViT_L_16_Weights' 
+
+augmentations:
+  input_size: 224
+
 ```
 
 ## Band Sampling
@@ -142,42 +150,7 @@ num_workers: 4
 pin_memory: true
 ```
 
-## Data Preprocessing
 
-### Spectral Normalization
-```python
-# Normalize across spectral dimension
-normalized_data = (data - data.mean(axis=2, keepdims=True)) / \
-                  data.std(axis=2, keepdims=True)
-```
-
-### Dimensionality Reduction
-For computational efficiency:
-```python
-# PCA on spectral dimension
-from sklearn.decomposition import PCA
-pca = PCA(n_components=50)
-reduced_data = pca.fit_transform(data.reshape(-1, 408))
-```
-
-## Best Practices
-
-### Data Handling
-1. Verify `.bil` and `.hdr` file pairs
-2. Check wavelength calibration consistency
-3. Handle missing or corrupted bands
-4. Monitor memory usage with full spectrum
-
-### Training Considerations
-- Start with band sampling for initial experiments
-- Use gradient checkpointing for memory efficiency
-- Consider spectral-aware augmentations
-- Monitor for spectral overfitting
-
-### Computational Requirements
-- **Memory**: 16GB+ RAM recommended for full spectrum
-- **GPU**: 8GB+ VRAM for reasonable batch sizes
-- **Storage**: Hyperspectral files are large (>100MB each)
 
 ## Example Usage
 
@@ -196,20 +169,6 @@ python train/simclr_birdcolour_kornia_hyperspectral.py \
   --test-embeddings-only \
   --model-checkpoint outputs/hyperspectral_model.ckpt
 ```
-
-## Troubleshooting
-
-### Common Issues
-- **File format errors**: Verify `.bil`/`.hdr` file integrity
-- **Memory errors**: Reduce batch size or use band sampling
-- **Wavelength misalignment**: Check header file consistency
-- **Slow training**: Consider dimensionality reduction
-
-### Performance Tips
-- Use band sampling for initial experiments
-- Enable mixed precision training
-- Use data loading optimizations
-- Consider spectral binning for efficiency
 
 ## Related Topics
 
