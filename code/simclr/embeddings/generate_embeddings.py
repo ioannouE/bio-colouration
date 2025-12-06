@@ -14,7 +14,7 @@ from argparse import ArgumentParser
 import pytorch_lightning as pl
 # from simclr_birdcolour import SimCLRModel, SimCLRDataModule
 # from simclr_birdcolour_tune_eval import perform_permanova, generate_embeddings, plot_knn_examples
-from simclr_birdcolour_kornia02 import SimCLRModel, SimCLRDataModule, generate_embeddings, plot_knn_examples
+from train.simclr_birdcolour_kornia02 import SimCLRModel, SimCLRDataModule, generate_embeddings, plot_knn_examples
 import datetime as dt
 import re
 import csv
