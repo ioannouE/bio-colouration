@@ -1,5 +1,9 @@
 import warnings
 warnings.filterwarnings("ignore")
+# Add the parent directory of 'train' to the Python path
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+sys.path.insert(0, parent_dir)
 
 import os
 import torch
@@ -15,7 +19,7 @@ import re
 import csv
 import matplotlib.pyplot as plt
 import json
-from simclr_birdcolour_kornia02 import SimCLRModel, SimCLRDataModule, plot_knn_examples
+from train.simclr_birdcolour_kornia02 import SimCLRModel, SimCLRDataModule, plot_knn_examples
 
 
 def generate_embeddings_from_layer(model, dataloader):

@@ -1,6 +1,11 @@
 import warnings
 warnings.filterwarnings("ignore")
 
+# Add the parent directory of 'train' to the Python path
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+sys.path.insert(0, parent_dir)
+
 import os
 import torch
 import yaml
@@ -8,7 +13,7 @@ import pandas as pd
 from argparse import ArgumentParser
 import pytorch_lightning as pl
 from multispectral_data import SimCLRDataModule
-from simclr_birdcolour_kornia_spectral import SimCLRModel, plot_knn_examples
+from train.simclr_birdcolour_kornia_spectral import SimCLRModel, plot_knn_examples
 # from simclr_birdcolour_tune_eval import generate_embeddings, plot_knn_examples
 import datetime as dt
 import re

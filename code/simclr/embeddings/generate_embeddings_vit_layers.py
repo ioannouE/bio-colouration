@@ -2,6 +2,11 @@
 import warnings
 warnings.filterwarnings("ignore")
 
+# Add the parent directory of 'train' to the Python path
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+sys.path.insert(0, parent_dir)
+
 import os
 import re
 import csv
@@ -14,7 +19,7 @@ import matplotlib.pyplot as plt
 from argparse import ArgumentParser
 
 # Reuse your existing model/data module and plotting util
-from simclr_birdcolour_kornia02 import SimCLRModel, SimCLRDataModule, plot_knn_examples
+from train.simclr_birdcolour_kornia02 import SimCLRModel, SimCLRDataModule, plot_knn_examples
 
 
 def _extract_vit_blocks(vit_backbone, x, layer_indices):
